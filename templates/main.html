@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Resume Now</title>
+</head>
+
+<style>
+    label {
+        font-size: larger;
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+    <!-- Back to top button -->
+    <!--<div id="top"></div> -->
+
+    <!-- Navbar content -->
+    <div class="container-fluid mb-5">
+        <nav class="navbar bg-primary navbar fixed-top" data-bs-theme="dark">
+            <!-- Navbar content -->
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('Landing') }}">
+                        <h5><strong>Resume Now</strong></h5>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('Landing') }}#contact-us">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('Landing') }}#about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Comming Soon</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <div id="top">Top</div>
+                    <!-- <a class="" id="top"></a>
+                </li> -->
+            </ul>
+        </nav><br>
+    </div>
+    
+
+    <div class="container">
+        <div>
+            
+            <form id="myForm" action="/generate-pdf" method="post">
+                <h2 style="text-align: center;">Personal Details</h2>
+
+                <!-- Full Name -->
+                <div class="row g-3">
+                    <label for="fullname">
+                        Enter Your Full Name:
+                    </label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="First_name" placeholder="First name*"
+                            aria-label="First name" id="First_name" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="Middle_name" placeholder="Middle name"
+                            aria-label="Middle name" id="Middle_name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="Last_name" placeholder="Last name*"
+                            aria-label="Last name" id="Last_name" required>
+                    </div>
+                </div><br>
+                <!-- Contact Details -->
+                <div class="row g-3">
+                    <label for="contact">
+                        Contact Details:
+                    </label>
+                    <div class="col">
+                        <input type="email" class="form-control" name="email" placeholder="Email Address*"
+                            aria-label="Email Address" id="email" required>
+                    </div>
+                    <div class="col">
+                        <input type="tel" class="form-control" name="mobile_number" placeholder="Mobile Number*"
+                            aria-label="Mobile Number" id="mobile_number" required>
+                    </div>
+                </div><br>
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" class="form-control" name="LinkedIn" placeholder="LinkedIn"
+                            aria-label="LinkedIn" id="LinkedIn">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="GitHub" placeholder="GitHub" aria-label="GitHub"
+                            id="GitHub">
+                    </div>
+
+                </div>
+
+                <!-- Picture -->
+                <p></p>
+                <!-- Enter your Professional Picture Here:* 
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02" name="Picture" required>
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                </div>
+                <p></p> -->
+
+
+                <!-- DOB -->
+                <div class="col">
+                    <label for="birthday">
+                        Birthday:*
+                    </label>
+                    <input class="form-control w-25 p-3" type="date" id="birthday" name="birthday" required><br>
+                </div>
+
+
+                <!-- City State Country -->
+                <div class="row g-3">
+                    <label for="address">
+                        Address Details:
+                    </label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="Country" placeholder="Country*"
+                            aria-label="Country" id="Country" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="State" placeholder="State*" aria-label="State"
+                            id="State" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="City_District" placeholder="City/District*"
+                            aria-label="City/District" id="City_District" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" name="Town_Village" placeholder="Town/Village"
+                            aria-label="Town/Village" id="Town_Village">
+                    </div>
+                    <div class="col">
+                        <input type="tel" class="form-control" name="Pin_Code" placeholder="Pin Code*"
+                            aria-label="Pin Code" id="Pin_Code" required>
+                    </div>
+
+                </div><br>
+                <p></p>
+                <h2 style="text-align: center;">Highest Education</h2>
+
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="Degree" class="form-label">Degree*</label>
+                        <input type="text" class="form-control" name="Degree" id="Degree"
+                            placeholder="eg. UG, PG, PHD etc." required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Course" class="form-label">Course*</label>
+                        <input type="text" class="form-control" name="Course" id="Course"
+                            placeholder="eg. B.tech, MBA, BCA, BA etc." required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="Stream" class="form-label">Stream/Subject*</label>
+                        <input type="text" class="form-control" name="Stream" id="Stream"
+                            placeholder="eg. CSE, ECE, Physics, Bengali etc." required>
+                    </div>
+                </div>
+                <p></p>
+                <!--Institution-->
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="School_College" class="form-label">School/College*</label>
+                        <input type="text" class="form-control" name="School_College" id="School_College" required>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="Board_University" class="form-label">Board/University*</label>
+                        <input type="text" class="form-control" name="Board_University" id="Board_University" required>
+                    </div>
+                </div>
+
+                <p></p>
+                <!-- Marks -->
+
+                <div class="row g-3">
+                    <label for="marks">Marks:</label>
+                    <div class="col-md-3">
+                        <select id="marks_type" class="form-select" name="marks_type"
+                            aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="Percentage: ">Percentage</option>
+                            <option value="CGPA: ">CGPA</option>
+                            <option value="Pursuing">Pursuing</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-9">
+                        <input type="text" id="marks_val" class="form-control" name="marks_val"
+                            placeholder="*Leave it blank for Pursuing">
+                    </div>
+                </div>
+
+                <p></p>
+                <!-- Education duration -->
+                <div class="row g-3">
+
+                    <label for="Duration">Duration(Optional)</label>
+                    <div class="col-md-2">
+                        <label for="from_date">From: </label>
+                        <input type="date" id="from_date" name="from_date" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="to_date">To: </label>
+                        <input type="date" id="to_date" name="to_date" class="form-control">
+                    </div>
+
+
+                </div>
+                <p></p>
+                <br>
+
+                <!--Skill Details-->
+                <h2 style="text-align: center;">Skill Details</h2>
+
+                <!--core Skill-->
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="core_skill" class="col-form-label"><b>Core Skills* </b> </label>
+                    </div>
+
+                    <div class="col-auto">
+                        <!-- <input type="" id="core_skill" class="form-control"> -->
+                        <textarea name="core_skill" class="form-control" id="core_skill" required></textarea>
+                    </div>
+                </div>
+                <p></p>
+
+                <!--soft Skill-->
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                        <label for="soft_skill" class="col-form-label"><b>Soft Skills* </b> </label>
+                    </div>
+                    <div class="col-auto">
+                        <!-- <input type="" id="soft_skill" class="form-control"> -->
+                        <textarea name="soft_skill" class="form-control" id="soft_skill" required></textarea>
+                    </div>
+                </div>
+                <p></p>
+
+                <!--Skill Details-->
+                <h2 style="text-align: center;">Project Details</h2>
+
+                <div class="mb-3">
+                    <label for="project_details" class="form-label">Add your Projects:</label>
+                    <textarea class="form-control" id="project_details" name="project_details" rows="3"></textarea>
+                </div>
+                <p></p>
+                
+
+                <!--Language-->
+                <label for="" class="form-label"><b>Languages</b></label>
+
+                <!--Language 1-->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Language 1: </span>
+                    <input type="text" class="form-control" name="language1" id="language1" placeholder="Language Name"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="range" class="form-range" name="language1_level" min="0" max="2" step="1"
+                        id="customRange3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                Only Speak
+                            </div>
+                            <div class="col text-center">
+                                Read & Write
+                            </div>
+                            <div class="col text-end">
+                                Mother Tongue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+
+                <!--Language 2-->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Language 2: </span>
+                    <input type="text" class="form-control" name="language2" placeholder="Language Name"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="range" class="form-range" name="language2_level" min="0" max="2" step="1"
+                        id="customRange3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                Only Speak
+                            </div>
+                            <div class="col text-center">
+                                Read & Write
+                            </div>
+                            <div class="col text-end">
+                                Mother Tongue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+
+                <!--Language 3-->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Language 3: </span>
+                    <input type="text" class="form-control" name="language3" placeholder="Language Name"
+                        aria-label="Username" aria-describedby="basic-addon1">
+                    <input type="range" class="form-range" name="language3_level" min="0" max="2" step="1"
+                        id="customRange3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                Only Speak
+                            </div>
+                            <div class="col text-center">
+                                Read & Write
+                            </div>
+                            <div class="col text-end">
+                                Mother Tongue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <div class="about_me" id="">
+                    <!-- <h2>About You</h2> -->
+                    <div class="mb-3">
+                        <label for="about_me" class="form-label">About You:</label>
+                        <textarea class="form-control" id="about_me" rows="3" name="about_me"></textarea>
+                    </div>
+                </div>
+                <p></p>
+
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+    <div class="back_to_top">
+        <a href="#" class="button-55">Back to top</a>
+    <!-- <button onclick="topFunction()" id="myBtn" title="Go to top">Back To Top</button> -->
+
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+</body>
+
+</html>
