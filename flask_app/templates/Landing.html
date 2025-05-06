@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/Landing.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Resume Now</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="container-fluid mb-5">
+    <nav class="navbar bg-primary navbar fixed-top" data-bs-theme="dark">
+      <!-- Navbar content -->
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">
+            <h5><strong>Resume Now</strong></h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#contact-us">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Comming Soon</a>
+        </li>
+      </ul>
+
+    </nav><br>
+
+  </div>
+
+
+  <div class="container">
+    <div class="main-button">
+        <a href="{{ url_for('main') }}"><h1>Lets create!</h1></a>
+    </div>
+
+  </div>
+
+  <!-- About Us -->
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="about" id="about-us">
+          <h2>About Us</h2>
+          <p>
+            At Resume Now, we make resume building simple, fast, and effective. Our platform is designed to help job seekers, students, and professionals create standout resumes without hassle. With clean templates, easy customization, and real-time previews, you can focus on your skills while we handle the design. We also provide helpful tips to optimize your resume and increase your chances of landing interviews. Whether you're starting fresh or updating your resume, we’re here to support your career journey. Build a professional, polished resume in minutes — no stress, no guesswork, just results.
+          </p>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="about2">
+          <h2>Our Other Services</h2>
+          <img src="{{ url_for('static', filename='images/web/—Pngtree—coming soon.png') }}" alt="Coming Soon">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Us -->
+  <div class="contact" id="contact-us">
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Name</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" name="user" placeholder="Name">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" name="user_email" placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Queries/Feedback</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" name="Queries/Feedback" rows="3"></textarea>
+      </div>
+      <div class="my_submit">
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+      </div>
+
+    </form>
+
+  </div>
+
+
+
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+</body>
+
+</html>

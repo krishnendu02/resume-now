@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <link href="css\bootstrap.css" rel="stylesheet">
+  <title>Resume Now</title>
+</head>
+
+<body>
+    <!-- Navbar content -->
+    <div class="container-fluid mb-5">
+        <nav class="navbar bg-primary navbar fixed-top" data-bs-theme="dark">
+            <!-- Navbar content -->
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{{ url_for('Landing') }}">
+                        <h5><strong>Resume Now</strong></h5>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('Landing') }}#contact-us">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{{ url_for('Landing') }}#about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Comming Soon</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <div id="top">Top</div>
+                    <!-- <a class="" id="top"></a>
+                </li> -->
+            </ul>
+        </nav><br>
+    </div>
+
+  <div class="container">
+    <h2 style="text-align: center;">Choose the Background of the PDF</h2>
+
+    <div class="gallery">
+      <a href="{{ url_for('main') }}" onclick="sendValue(1)">
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='images/pdf/pint1.jpg') }}" alt="Image 1">
+        </div>
+      </a>
+      <a href="{{ url_for('main') }}" onclick="sendValue(2)">
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='images/pdf/pint2.jpg') }}" alt="Image 2">
+        </div>
+      </a>
+      <a href="{{ url_for('main') }}" onclick="sendValue(3)">
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='images/pdf/pint3.jpg') }}" alt="Image 3">
+        </div>
+      </a>
+      <a href="{{ url_for('main') }}" onclick="sendValue(4)">
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='images/pdf/pint4.jpg') }}" alt="Image 4">
+        </div>
+      </a>
+      <a href="{{ url_for('main') }}" onclick="sendValue(5)">
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='images/pdf/pint5.jpg') }}" alt="Image 5">
+        </div>
+      </a>
+      <a href="{{ url_for('main') }}" onclick="sendValue(6)">
+        <div class="image-card">
+          <img src="{{ url_for('static', filename='images/pdf/pint6.jpg') }}" alt="Image 6">
+        </div>
+      </a>
+      
+
+    </div>
+    
+
+  </div>
+
+
+
+
+
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+</body>
+
+</html>

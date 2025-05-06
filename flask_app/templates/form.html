@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Generate PDF</title>
+
+</head>
+
+<body>
+    <h2>Fill the Form</h2>
+    <form action="/generate-pdf" method="post">
+        <label>Name:</label>
+        <input type="text" name="name" required><br><br>
+        <label>Last Name:</label>
+        <input type="text" name="last_name"><br><br>
+        <label>Email:</label>
+        <input type="email" name="email" required><br><br>
+        <button type="submit">Generate PDF</button>
+    </form>
+    
+
+</body>
+</html>
